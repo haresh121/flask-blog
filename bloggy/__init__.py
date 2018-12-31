@@ -6,8 +6,8 @@ from flask_login import LoginManager
 from bloggy.config import Config
 from bloggy.way2sms import Sms as sms
 
-uname = 9030028799  # your phnum here
-upass = 'haresh123'  # your password here
+uname = 1010101010  # your phnum here
+upass = 'aaaaaaa'  # your password here
 messenger = sms(uname, upass)
 
 mail = Mail()
