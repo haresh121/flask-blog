@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+body{
+    margin, padding: 0;
+    background-color: #ecf0f1;
+}
+
+html{
+    height: 100vh;
+}
+
+.container{
+    width:70%;
+}
+
+.divcon{
+/*    background-color: #EDF4E9;*/
+/*    border-radius: 15px;*/
+    padding: 20px;
+    margin-bottom: 50px;
+}
+nav div{
+    padding-left: 50px;
+    padding-right:70px;
+}
+
+.sidebar{
+    background-color: #81AFAF;
+    padding:10px;
+    border: 1px solid #6E6E9C;
+    border-radius: 5px;
+}
+.sidebar h2{
+    font-size: 20px;
+    text-align: center;
+}
+.sidebar p{
+    font-size: 14px;
+    text-align: center;
+}
+.sidebar ul{
+    text-align: left;
+    padding: 5px;
+}
+.sidebar li{
+    list-style: none;
+    margin-bottom: 4px;
+}
+.sidebar ul li a{
+    color: darkslategray;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.sidebar ul li a:hover{
+    background-color: aquamarine;
+    background-blend-mode: difference;
+}
+/*home*/
+
+.posts{
+    width:70%;
+    padding-top: 10px;
+/*    padding-bottom: 20px;*/
+}
+
+.post-style{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 30px;
+    width:600px;
+    height: auto;
+/*    margin-top: 20px;*/
+    text-align: justify;
+    border: 1px solid #EBF599;
+    border-radius: 5px;
+    background-color: #47C7C8;
+}
+
+.post-style a{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.post-style p{
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.post-style span{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+img{
+    width: 20px;
+    height: 20px;
+}
+.img-prof-pic{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+/*registration*/
+.cont-f form{
+/*    background-color: aqua;*/
+    position: relative;
+    left:-1%;
+    width: 400px;
+    height: 400px;
+    padding-left: 20px;
+}
+
+
+.reg-form{
+/*    margin: 20px auto;*/
+    width: 500px;
+    height: 50px;
+}
+.cont-f form input .labell{
+    margin-bottom: 0px;
+}
+.cont-f form input[ type = text ]{
+    height: 35px;
+}
+.cont-f form input[ type = password ]{
+    height: 35px;
+}
+.cont-f form input[ type = email ]{
+    height: 35px;
+}
+
+.marg{
+    margin-top: 0rem;
+    margin-left: 7.9rem;
+}
+
+
+.account-img{
+    width: 130px;
+    height:130px;
+}
+
+.content-section{
+    overflow-y: hidden;
+    padding-top: 20px;
+    padding-left: 10px;
+    height: 500px;
+    border: 2px solid black;
+    background-color: aliceblue;
+}
+
+.cont-x{
+    margin-top: 0.6rem;
+    position: relative;
+    width:100%;
+    height: auto;
+    background-color: whitesmoke;
+    border: 1px solid #192a56;
+    padding:15px;
+}
+.cont-x form input[ type = text ]{
+    height: 35px;
+}
+
+div div .ax{
+    font-size: 13px;
+}
+
+.content-div{
+    width:100%;
+    border: 1px solid #5B1313;
+    background-color: #D3D3B8;
+    height: 200px;
+    padding: 20px;
+}
+.content-div img{
+    height: 160px;
+}
+.cross{
+/*    position: relative;*/
+    margin-top: -3px;
+    margin-right: 3px;
+    float: right;
+/*    background-color: aqua;*/
+}
+.cross a{
+    text-align: center;
+}
+
+.pagination{
+/*    background-color: aqua;*/
+    padding-top: 20px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+pre{
+    font-family: sans-serif;
+    font-size: 15px;
+    max-width: 100ch;
+    display: block;
+    word-break: break-word;
+    word-wrap: break-word;
+    padding-left:20px;
+}
+.home-post{
+    height: auto;
+}
+
+.content-section-err{
+    height: auto;
+    margin-top: 1rem;
+}
+
+.posty{
+    width:100%;
+    height: auto;
+    background-color: antiquewhite;
+    padding: 20px;
+    white-space: normal;
+}
+.posty .img-prof-pic{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.todo-list{
+    width:300px;
+    height: auto;
+/*    max-height: auto;*/
+    background-color: aquamarine;
+/*    padding: 10px;*/
+/*
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+*/
+    position: relative;
+    left:23%;
+    top:20%;
+}
+.todo-list h3{
+    width:100%;
+    margin-bottom: 0;
+    background-color: black;
+    padding: 10px;
+    color: azure;
+    font-size: 21px;
+    font-weight: 600;
+    font-family:'Muli', sans-serif;
+}
+.todo-list ul{
+    padding:0;
+}
+.todo-list ul li{
+    width: 100%;
+    background-color: aliceblue;
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid black;
+/*    margin-bottom: 10px;*/
+}
+.todo-list ul li h4{
+    margin: 0;
+    font-size: 18px;
+    width:85%;
+    float: left;
+    padding-left: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.todo-list ul li a{
+    width:15%;
+    display: flex;
+    align-items: center;
+/*    align-content: center;*/
+    justify-content: center;
+    float: right;
+    text-align: center;
+    border-left: 1px solid black;
+    text-decoration: none;
+    color:currentColor;
+    font-size: 24px;
+}
+.todo-list ul li a:hover{
+    color:#7d5fff;
+}
+
+
+@media only screen and (max-width: 768px){
+    .container{
+        width:100%;
+        overflow-x: hidden;
+    }
+    .posts{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .post-style{
+        width: 100%;
+    }
+    .sidebar{
+        margin-top: 6rem !important;
+        margin-left: 30px;
+    }
+    .content-section{
+        width: 100%;
+        margin: none;
+    } 
+    .cont-f form input[ type = password ]{
+        height: 35px;
+        width: 300px !important;
+    }
+    .cont-f form input[ type = email ]{
+        height: 35px;
+        width: 300px !important;
+    }
+    .cont-f form input[ type = text ]{
+        height: 35px;
+        width: 300px !important;
+    }
+    .cont-f form input[type = file]{
+        margin-top: 4px;
+        margin-left: 0.25rem !important;
+    }
+    .labell{
+        margin-bottom: 1px;
+        margin-left: -12px;
+    }
+/*
+    #username,#email,#Password,#Confirm_Password{
+        width: 150%;
+        margin-left: 45px;
+    }
+*/
+    #Submit{
+        margin-top: 20px;
+    }
+    .form-group{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .label1{
+        margin-left: 0px !important;
+    }
+    .btm{
+        margin-left: 35px !important;
+        margin-top: 10px !important;
+    }
+    .todo-list{
+        position: relative;
+        left: 10%;
+        top: 15%;
+        margin-bottom: 20px;
+/*        margin-left: -30px;*/
+/*        margin-top: -20px;*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

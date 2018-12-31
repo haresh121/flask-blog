@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="content-div mt-2" >
+    <div class="row" >
+        <img src="{{ pic }}" alt="" class="col-md-4 rounded-circle">
+        <div class="mt-4 ml-3">
+            <h2 class="col-md-8 text-capitalize">{{ post.username }}</h2>
+            <p class='ml-3'>{{ post.email }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

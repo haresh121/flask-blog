@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form action="" method="post">
+        <div class="form-group">
+            <label>Todo:</label>
+            <input class="form-control" name="todo" type="text">
+        </div>
+        <button class="btn btm btn-info">Add</button>
+    </form>
+    {% if todos %}
+        <div class="todo-list">
+            <h3> YOUR TODOS </h3>
+            <ul>
+                {% for todo in todos %}
+                <li>
+                    <h4> {{todo.todo}} </h4><a id="deletetodo" href="{{url_for('main.deltodo',t_n_d=todo.id)}}"><i class="far fa-times-circle"></i></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <h3 class="text-center">Enter a todo to view here</h3>
+    {% endif %}
+    
+{% endblock content %}

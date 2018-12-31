@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <form action="{{url_for('posts.searcher')}}" method="post">
+        <p>please enter the title of the post you want to search</p>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary">Submit</button>
+          </div>
+        </div>
+    </form>
+    {% if post %}
+        <div class="posty">
+            <h2>{{ post.title }}</h2>
+            <div class='img-prof-pic'>
+                <img class="rounded-circle" src="{{url_for('static', filename='user-pics/'+post.author.image_file)}}" alt="profile picture">
+                <span class="margin">
+                    {% if current_user.username == post.author.username %}
+                        <a class="ax" href="{{url_for('users.account')}}">{{ post.author.username }}</a>
+                    {% else %}
+                        <a class="ax">{{ post.author.username }}</a>
+                    {% endif %}
+                    on {{ post.date_posted }}
+                </span>
+            </div>
+            <pre class="home-post">{{ post.content }}</pre>
+        </div>
+    {% else %}
+        <p>search result appear here</p>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for post in posts.items %}
+<section class="posts">
+    <div class='post-style'>
+        <a href="{{ url_for('posts.viewpost', post_id=post.id) }}">{{ post.title }}</a>
+        <div class='img-prof-pic'>
+            <img class="rounded-circle" src="{{url_for('static', filename='user-pics/'+post.author.image_file)}}" alt="profile picture">
+            <span>
+                {% if current_user.username == post.author.username %}
+                    <a class="ax" href="{{url_for('users.account')}}">{{ post.author.username }}</a>
+                {% else %}
+                    <a class="ax">{{ post.author.username }}</a>
+                {% endif %}
+                on {{ post.date_posted }}
+            </span>
+        </div>
+        <p class="home-post">{{ post.content }}</p>
+        <span class="font-weight-bold" style="font-size: 16px;">Comments</span>
+        {% for comment in comments %}
+             {% if post.id == comment.post_id %}
+                 <div class="ml-3 mb-1" style="width: auto; background-color: aliceblue;padding: 0px;border:1px solid black;" >
+                     {{comment.author.username}}: {{comment.comment}} >> on {{comment.date_posted}}  {{comment.time_posted}}
+                     {% if comment.author.id == current_user.id %}
+                         <span class="cross" ><a href="{{url_for('posts.delcomment',com_num=comment.id,post_page=posts.page)}}"><i class="fas fa-times"></i></a></span>
+                     {% endif %}
+                 </div>
+             {% endif %}
+        {% endfor %}
+        <form action="{{url_for('main.home', post_num=post.id,post_page=posts.page)}}" method="post" class="input-group mb-3 ml-3 mt-1">
+            <input type="text" name='comm' class="myinp" placeholder="comments here!!">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary btn-sm">comment</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endfor %}
+    <div class='pagination' >
+        {% for page_num in posts.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current = 2) %}
+            {% if page_num %}
+                {% if posts.page == page_num %}
+                    <button class="btn btn-info mb-4 mt-2 ml-1" disabled><a>{{page_num}}</a></button>
+                {% else %}
+                    <a class="btn btn-outline-info mb-4 mt-2 ml-1" href="{{url_for('main.home', page=page_num)}}">{{page_num}}</a>
+                {% endif %}
+            {% else %}
+                <button class="btn btn-outline-info mb-4 mt-2 ml-1" disabled><a>...</a></button>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+
+
+
+

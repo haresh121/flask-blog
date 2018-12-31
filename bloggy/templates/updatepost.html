@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div class="cont-x content-form">
+        <form method="post" action="">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4">Update Post</legend>
+                <div class="mb-2 form-group">
+                    {{ form.title.label(class='labell form-control-label') }}
+                    {% if form.title.errors %}
+                        {{form.title(autocomplete='off', class='form-control is-invalid')}}
+                        <div class="marg invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {%else%}
+                    {{form.title(autocomplete='off', class=' form-control')}}
+                    {%endif%}
+                </div>
+                <div class="mt-3 mb-3 form-group">
+                    {{ form.content.label(class='labell form-control-label') }}
+                    {% if form.content.errors %}
+                        {{form.content(autocomplete='off',rows=5,cols=100,class='form-control is-invalid')}}
+                        <div class="marg invalid-feedback">
+                            {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {%else%}
+                    {{form.content(autocomplete='off',rows=10,cols=100, class='form-control')}}
+                    {%endif%}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                    {{form.submit(class="btn btn-outline-info")}}
+            </div>
+            
+        </form>
+    </div>
+
+{% endblock content %}

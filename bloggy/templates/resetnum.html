@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <form action="" method="post">
+        <small>enter the otp sent to ur mobile</small>
+           <fieldset class="form-group">
+                {{form.hidden_tag()}}
+                <div class="form-group">
+                    {{ form.num.label(class='form-control-label') }}
+                    {% if form.num.errors %}
+                        {{form.num(class='form-control is-invalid')}}
+                        <div class="invalid-feedback">
+                            {% for error in form.num.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {%else%}
+                    {{form.num(class='form-control')}}
+                    {%endif%}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{form.Submit(class="btn btn-outline-info mb-2")}}
+            </div>
+        </form>
+
+{% endblock content %}

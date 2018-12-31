@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    <div class="content-form">
+        <form method="post" action="">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4">RESET PASSWORD<br>
+                    <small>enter your number to get a reset code</small>
+                </legend>
+                
+                
+                <div class="form-group">
+                    {{ form.username.label(class='form-control-label') }}
+                    {% if form.username.errors %}
+                        {{form.username(class='form-control is-invalid')}}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {%else%}
+                    {{form.username(class='form-control')}}
+                    {%endif%}
+                </div>
+                <div class="form-group">
+                    {{ form.number.label(class='form-control-label') }}
+                    {% if form.number.errors %}
+                        {{form.number(class='form-control is-invalid')}}
+                        <div class="invalid-feedback">
+                            {% for error in form.number.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {%else%}
+                    {{form.number(class='form-control')}}
+                    {%endif%}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                    {{form.Submit(class="btn btn-outline-info mb-2")}}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
